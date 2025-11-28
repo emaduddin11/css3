@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS task 3</title>
+ 
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-…"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    :root {
+      --body-bg: #0d1b2a;           
+      --navbar-bg: #1b263b;         
+      --icon-color: #a8dadc;        
+      --icon-hover-bg: #277da1;     
+      --icon-hover-color: #f1faee;  
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--body-bg);
+      color: var(--icon-color);
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 24px;
+      background-color: var(--navbar-bg);
+      padding: 12px 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--icon-color);
+      font-size: 14px;
+      padding: 8px;
+      border-radius: 8px;
+      transition: transform 0.2s, background-color 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-item i {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .nav-item:hover {
+      transform: translateY(-5px);
+      background-color: var(--icon-hover-bg);
+      color: var(--icon-hover-color);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        gap: 16px;
+        padding: 10px 16px;
+      }
+      .nav-item i {
+        font-size: 20px;
+      }
+      .nav-item {
+        font-size: 12px;
+        padding: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-item" id="home">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </div>
+    <div class="nav-item" id="profile">
+      <i class="fas fa-user"></i>
+      <span>Profile</span>
+    </div>
+    <div class="nav-item" id="messages">
+      <i class="fas fa-envelope"></i>
+      <span>Messages</span>
+    </div>
+    <div class="nav-item" id="photos">
+      <i class="fas fa-image"></i>
+      <span>Photos</span>
+    </div>
+    <div class="nav-item" id="settings">
+      <i class="fas fa-cog"></i>
+      <span>Settings</span>
+    </div>
+  </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById('home').addEventListener('click', () => console.log('Home clicked'));
+      document.getElementById('profile').addEventListener('click', () => console.log('Profile clicked'));
+      document.getElementById('messages').addEventListener('click', () => console.log('Messages clicked'));
+      document.getElementById('photos').addEventListener('click', () => console.log('Photos clicked'));
+      document.getElementById('settings').addEventListener('click', () => console.log('Settings clicked'));
+    });
+  </script>
+
+</body>
+</html>
